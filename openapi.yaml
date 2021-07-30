@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+    description: |
+      Code challenge API
+    version: 1.0.0
+    title: OpenAPI Code challenge
+servers:
+    - url: https://us-central1-code-challenge-e9f47.cloudfunctions.net/app
+      description: Test environment
+    - url: http://localhost:5001/code-challenge-e9f47/us-central1/app
+      description: Local environment
+paths:
+    /token:
+        post:
+            summary: Log in users
+            operationId: login
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                              username:
+                                type: string
+                              password:
+                                type: string
+                            example:
+                              username: 'user'
+                              password: 'pass'
+            responses:
+                '200':
+                    description: OK     
+                    content:
+                        application/json;charset=UTF-8:
+                            schema:
+                                properties:
+                                    accessToken:
+                                        type: string
+                '401':
+                    description: Unauthorized
+                    
+    /transactions:
+        get:
+            summary: Get user transactions
+            operationId: transactions
+            security:
+                - bearerAuth: []
+            parameters:
+                - name: sort
+                  in: query
+                  description: Sort order
+                  required: false
+                  example: 'desc'
+                  schema:
+                    type: string
+                    enum: ['asc', 'desc'] 
+                - name: description
+                  in: query
+                  description: Filter by description
+                  required: false
+                  example: 'some'
+                  schema:
+                    type: string     
+            responses:
+                '200':
+                  description: OK
+                  content:
+                      application/json;charset=UTF-8:
+                          schema:
+                              type: array
+                              items:
+                                  properties:                
+                                      id:         
+                                          type: number
+                                      date:
+                                          type: string
+                                      amount:
+                                          type: number
+                                      fee:
+                                          type: number
+                                      description:
+                                          type: string
+                                      userId:
+                                          type: number
+components:
+    securitySchemes:
+        bearerAuth: # arbitrary name for the security scheme
+            type: http
+            scheme: bearer
+            bearerFormat: JWT # optional, arbitrary value for documentation purposes
