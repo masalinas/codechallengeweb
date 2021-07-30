@@ -15,7 +15,8 @@ export class LoginComponent {
   loading = false;
   submitted = false;
   returnUrl: string;
-
+  showPassword = false;
+  
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
@@ -56,7 +57,5 @@ export class LoginComponent {
                 console.log(error);
                 this.loading = false;
             });
-
-      this.router.navigate([this.returnUrl]);
   }
 }

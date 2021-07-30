@@ -28,14 +28,19 @@ export class AuthenticationService {
 
                 return response.accessToken;
             }),
-            catchError(err => {
+            catchError((err: any) => {
+                console.log('refresh error')
+
                 return throwError(err);
-            }));
+              })
+            );
     }         
 
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('codechallengewed-token');
         this.currentUserAccessToken.next(null);
+
+        return of('Ok');
     }
 }

@@ -7,10 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // primeng dependencies
-import { ButtonModule } from 'primeng/button';
-import { DropdownModule } from 'primeng/dropdown';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 // import angular envirotment variables
 import { Configuration, ApiModule } from '@app/shared/backend';
@@ -36,7 +36,7 @@ import { LoginComponent } from './views/login/index';
     AppRoutingModule,
     ApiModule,
     ButtonModule,
-    DropdownModule,
+    InputTextModule,
     PanelModule,
     TableModule
   ],
