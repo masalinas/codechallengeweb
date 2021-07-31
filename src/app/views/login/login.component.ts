@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 
@@ -10,6 +10,8 @@ import { AuthenticationService } from '@app/shared/auth';
   styleUrls: ['login.component.scss'],
 })
 export class LoginComponent {
+  @ViewChild('username') username: ElementRef;
+
   loginForm: FormGroup;
     
   returnUrl: string;
@@ -39,12 +41,7 @@ export class LoginComponent {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
   
-  onSubmit() {       
-      // stop here if form is invalid
-      if (this.loginForm.invalid) {
-        return;
-      }
-
+  onSubmit(event) {       
       this.authenticationService.login(this.f.username.value, this.f.password.value)            
           .subscribe(data => {
               this.router.navigate([this.returnUrl]);
@@ -54,6 +51,8 @@ export class LoginComponent {
 
               this.loginForm.get('username').setValue('');
               this.loginForm.get('password').setValue('');
+
+              this.username.nativeElement.focus(); 
 
               console.log(error);
           });

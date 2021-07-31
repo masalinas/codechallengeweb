@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/app-azure-pr-manage-ui'),
+      dir: require('path').join(__dirname, './coverage/codechallengeweb'),
       subdir: '.',
       reporters: [
         { type: 'html' },

@@ -1,7 +1,7 @@
 <h1>Transaction List</h1>
 
-<div class="p-d-flex toolbar" style="width: 100%;">
-    <button pButton pRipple type="button" class="p-ml-auto" (click)="onLogout($event)">Logout</button>
+<div class="flex justify-content-end flex-wrap toolbar">    
+    <button pButton pRipple label="Logout" class="btn-challengue" (click)="onLogout($event)"></button>
 </div>
 
 <p-table  #dtTransactions [value]="transactions"
@@ -15,45 +15,45 @@
     <ng-template pTemplate="header">
         <tr>
             <th pSortableColumn="id">
-                <div class="p-d-flex p-jc-between p-ai-center">
+                <div class="flex justify-content-between align-items-center">
                     Id 
                     <p-sortIcon field="id"></p-sortIcon>
-                    <p-columnFilter type="numeric" class="p-ml-auto" field="id" display="menu"></p-columnFilter>
+                    <p-columnFilter type="numeric" class="ml-auto" field="id" display="menu"></p-columnFilter>
                 </div>
             </th>    
             <th pSortableColumn="userId">
-                <div class="p-d-flex p-jc-between p-ai-center">
+                <div class="flex justify-content-between align-items-center">
                     User Id
                     <p-sortIcon field="userId"></p-sortIcon>
-                    <p-columnFilter type="numeric" class="p-ml-auto" field="userId" display="menu"></p-columnFilter>
+                    <p-columnFilter type="numeric" class="ml-auto" field="userId" display="menu"></p-columnFilter>
                 </div>
             </th>         
             <th pSortableColumn="description">
-                <div class="p-d-flex p-jc-between p-ai-center">
+                <div class="flex justify-content-between align-items-center">
                     Description
                     <p-sortIcon field="description"></p-sortIcon>
-                    <p-columnFilter type="text" class="p-ml-auto" field="description" display="menu"></p-columnFilter>
+                    <p-columnFilter type="text" class="ml-auto" field="description" display="menu"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="description">
-                <div class="p-d-flex p-jc-between p-ai-center">
+                <div class="flex justify-content-between align-items-center">
                     Fee
                     <p-sortIcon field="fee"></p-sortIcon>
-                    <p-columnFilter type="numeric" class="p-ml-auto" field="fee" display="menu"></p-columnFilter>
+                    <p-columnFilter type="numeric" class="ml-auto" field="fee" display="menu"></p-columnFilter>
                 </div>
             </th>
             <th pSortableColumn="amount">
-                <div class="p-d-flex p-jc-between p-ai-center">
+                <div class="flex justify-content-between align-items-center">
                     Amount
                     <p-sortIcon field="amount"></p-sortIcon>
-                    <p-columnFilter type="text" class="p-ml-auto" numeric="amount" display="menu"></p-columnFilter>
+                    <p-columnFilter type="numeric" class="ml-auto" numeric="amount" display="menu"></p-columnFilter>
                 </div>
             </th> 
             <th pSortableColumn="date">
-                <div class="p-d-flex p-jc-between p-ai-center">
+                <div class="flex justify-content-between align-items-center">
                     Date
                     <p-sortIcon field="date"></p-sortIcon>
-                    <p-columnFilter type="date" class="p-ml-auto" field="date" display="menu"></p-columnFilter>
+                    <p-columnFilter type="date" class="ml-auto" field="date" display="menu"></p-columnFilter>
                 </div>
             </th>
         </tr>

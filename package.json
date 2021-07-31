@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "OpenAPI Code Challengue",
   "author": "Miguel Salinas Gancedo <masalinas.gancedo@gmail.com>",
-  "homepage": "https://github.com/masalinas/codechallengeweb#readme",  
+  "homepage": "https://github.com/masalinas/codechallengeweb#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/masalinas/codechallengeweb.git"
@@ -34,7 +34,7 @@
     "@angular/platform-browser": "~11.2.10",
     "@angular/platform-browser-dynamic": "~11.2.10",
     "@angular/router": "~11.2.10",
-    "primeflex": "^2.0.0",
+    "primeflex": "^3.0.0",
     "primeicons": "^4.1.0",
     "primeng": "^11.0.0",
     "rxjs": "~6.6.0",

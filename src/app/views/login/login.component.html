@@ -1,41 +1,31 @@
-<div class="container">
-    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
-        <p-panel header="OpenAPI Challenge Access">
-            <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
-                <div class="ui-grid-row">
-                    <div class="ui-grid-col-2">
-                        Login:
-                    </div>
-                    <div class="ui-grid-col-6">
-                        <input pInputText type="text" formControlName="username" class="form-control" name="login">
-                    </div>
-                    <div class="ui-grid-col-4">
-                        <div [hidden]="loginForm.controls['username'].valid || !loginForm.controls['username'].dirty" class="alert alert-danger">
-                            Username is required
-                        </div>
-                    </div>
-                </div>
-                <div class="ui-grid-row">
-                    <div class="ui-grid-col-2">
-                        Password:
-                    </div>
-                    <div class="ui-grid-col-6" [ngClass]="{'error' : loginError === true, 'ok': loginError === false}">
-                        <input pInputText type="password" formControlName="password" class="form-control" name="password">
-                    </div>
-                    <div class="ui-grid-col-4">
-                        <div [hidden]="loginForm.controls['password'].valid || !loginForm.controls['password'].dirty" class="alert alert-danger">
-                            Password is required
-                        </div>
-                    </div>
-                </div>
 
-                <div class="ui-grid-row">                    
-                    <div class="ui-grid-col-6">
-                        <button pButton type="submit" label="Submit" [disabled]="!loginForm.valid"></button>
-                    </div>
-                    <div class="ui-grid-col-4"></div>
+<div class="grid grid-nogutter surface-0 text-800">
+    <div class="col-12 md:col-4 p-4 text-center md:text-left flex align-items-center ">
+        <section>
+            <span class="block text-5xl font-bold mb-1">OpenAPI Web Challengue</span>
+            <div class="text-4xl text-primary font-bold mb-3">what your visitors deserve to see</div>
+            <p class="mt-0 mb-4 text-700 line-height-3 txt-challengue">OpenAPI Web Challengue it's a demo app.</p>
+            
+            <form [formGroup]="loginForm">
+                <div>
+                    <label for="username" class="block text-900 font-medium mb-2">Username</label>
+                    <input  #username id="username" type="text" pInputText class="w-full mb-2" formControlName="username" autofocus>
+                    <small [hidden]="loginForm.controls.username.valid || loginForm.controls.username.pristine" class="p-error">Enter your username</small>
+
+                    <label for="password" class="block text-900 font-medium mb-2">Password</label>
+                    <input id="password" type="password" pInputText class="w-full mb-2" formControlName="password"
+                           [ngClass]="{'error' : loginError === true, 'ok': loginError === false}">
+                    <small [hidden]="loginForm.controls.password.valid || loginForm.controls.password.pristine" class="p-error">Enter your password</small>
+
+                    <button pButton pRipple label="Sign In" class="btn-challengue w-full" (click)="onSubmit($event)"
+                            [disabled]="!loginForm.valid">
+                    </button>
                 </div>
-            </div>
-        </p-panel>
-    </form>
-</div>    
+            </form>
+        </section>
+    </div>
+
+    <div class="col-12 md:col-8 overflow-hidden">
+        <img src="assets/images/hero-1.png" alt="Image" class="login-image">
+    </div>
+</div>
