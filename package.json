@@ -1,7 +1,20 @@
 {
   "name": "codechallengeweb",
   "version": "1.0.0",
+  "description": "OpenAPI Code Challengue",
   "author": "Miguel Salinas Gancedo <masalinas.gancedo@gmail.com>",
+  "homepage": "https://github.com/masalinas/codechallengeweb#readme",  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masalinas/codechallengeweb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/masalinas/codechallengeweb/issues"
+  },
+  "keywords": [
+    "OpenAPI"
+  ],
+  "license": "ISC",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

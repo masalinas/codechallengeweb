@@ -1,8 +1,8 @@
 # description
-Web Console Challenge
+OpenAPI Code Challenge
 
 # generate models
-openapi-generator-cli generate -i swagger.json -g typescript-angular
+openapi-generator-cli generate -i openapi.yaml -g typescript-angular
 
 # debug app
 npm run start

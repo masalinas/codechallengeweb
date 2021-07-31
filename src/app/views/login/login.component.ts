@@ -12,11 +12,10 @@ import { AuthenticationService } from '@app/shared/auth';
 export class LoginComponent {
   loginForm: FormGroup;
     
-  loading = false;
-  submitted = false;
   returnUrl: string;
   showPassword = false;
-  
+  loginError = false;
+
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
@@ -40,22 +39,23 @@ export class LoginComponent {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
   
-  onSubmit() { 
-      this.submitted = true;
-      
+  onSubmit() {       
       // stop here if form is invalid
       if (this.loginForm.invalid) {
         return;
       }
 
-      this.loading = true;
-        this.authenticationService.login(this.f.username.value, this.f.password.value)            
-            .subscribe(data => {
-                this.router.navigate([this.returnUrl]);
-            },
-            error => {
-                console.log(error);
-                this.loading = false;
-            });
+      this.authenticationService.login(this.f.username.value, this.f.password.value)            
+          .subscribe(data => {
+              this.router.navigate([this.returnUrl]);
+          },
+          error => {
+              this.loginError = true;                
+
+              this.loginForm.get('username').setValue('');
+              this.loginForm.get('password').setValue('');
+
+              console.log(error);
+          });
   }
 }
