@@ -56,4 +56,4 @@ Login view
 ![Captura de pantalla de 2021-08-01 11-43-19](https://user-images.githubusercontent.com/1216181/127766539-c83627eb-3f51-429f-94f8-879162c5d88f.png)
 
 Transaction list View
-![Captura de pantalla de 2021-08-01 11-29-29](https://user-images.githubusercontent.com/1216181/127766142-d080ff87-f5d2-4d56-b7d9-23fd44171e1c.png)
+![Captura de pantalla de 2021-08-01 12-09-36](https://user-images.githubusercontent.com/1216181/127767149-69b11f78-f706-4623-9122-b8306c46b1d2.png)
