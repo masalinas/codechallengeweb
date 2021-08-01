@@ -2,12 +2,15 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 
+import { MessageService } from 'primeng/api';
+
 import { AuthenticationService } from '@app/shared/auth';
 
 @Component({
   selector: 'login-home',
   templateUrl: 'login.component.html',
   styleUrls: ['login.component.scss'],
+  providers: [MessageService]
 })
 export class LoginComponent {
   @ViewChild('username') username: ElementRef;
@@ -21,6 +24,7 @@ export class LoginComponent {
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
+              private messageService: MessageService,
               private authenticationService: AuthenticationService) {
     // redirect to home if already logged in
     if (this.authenticationService.currentUserTokenValue) { 
@@ -34,7 +38,7 @@ export class LoginComponent {
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required]      
     });
 
     // get return url from route parameters or default to '/'
@@ -53,6 +57,8 @@ export class LoginComponent {
               this.loginForm.get('password').setValue('');
 
               this.username.nativeElement.focus(); 
+
+              this.messageService.add({severity:'error', summary:'Error', detail:'The password is not correct'});
 
               console.log(error);
           });

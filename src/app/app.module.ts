@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // primeng dependencies
+import { MessagesModule } from 'primeng/messages'
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
@@ -35,6 +36,7 @@ import { LoginComponent } from './views/login/index';
     HttpClientModule,
     AppRoutingModule,
     ApiModule,
+    MessagesModule,    
     ButtonModule,
     InputTextModule,
     PanelModule,
