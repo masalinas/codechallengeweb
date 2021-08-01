@@ -18,7 +18,7 @@ export class LoginComponent {
   loginForm: FormGroup;
     
   returnUrl: string;
-  showPassword = false;
+  submitted = false;
   loginError = false;
 
   constructor(private formBuilder: FormBuilder,
@@ -45,12 +45,17 @@ export class LoginComponent {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
   
-  onSubmit(event) {       
+  onSubmit(event?) {            
+      // stop here if form is invalid
+      if (this.loginForm.invalid) {
+          return;
+      }
+              
       this.authenticationService.login(this.f.username.value, this.f.password.value)            
           .subscribe(data => {
               this.router.navigate([this.returnUrl]);
           },
-          error => {
+          error => {            
               this.loginError = true;                
 
               this.loginForm.get('username').setValue('');
@@ -60,7 +65,7 @@ export class LoginComponent {
 
               this.messageService.add({severity:'error', summary:'Error', detail:'The password is not correct'});
 
-              console.log(error);
+              return error;
           });
   }
 }

@@ -29,8 +29,6 @@ export class AuthenticationService {
                 return response.accessToken;
             }),
             catchError((err: any) => {
-                console.log('refresh error')
-
                 return throwError(err);
               })
             );

@@ -19,7 +19,7 @@
                            [ngClass]="{'error' : loginError === true, 'ok': loginError === false}">
                     <small [hidden]="loginForm.controls.password.valid || loginForm.controls.password.pristine" class="p-error">Enter your password</small>
 
-                    <button pButton pRipple label="Sign In" class="w-full" (click)="onSubmit($event)"
+                    <button pButton pRipple id="btn-login" label="Sign In" class="w-full" (click)="onSubmit($event)"
                             [disabled]="!loginForm.valid">
                     </button>
                 </div>
