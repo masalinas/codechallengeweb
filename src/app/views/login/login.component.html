@@ -4,7 +4,7 @@
         <section>
             <span class="block text-5xl font-bold mb-1">OpenAPI Web Challengue</span>
             <div class="text-5xl text-primary font-bold mb-3">what your visitors want to see</div>
-            <p class="mt-0 mb-4 text-700 line-height-3 txt-challengue">OpenAPI Web Challengue it's a demo App for you.</p>
+            <p class="mt-0 mb-4 text-700 line-height-3">OpenAPI Web Challengue it's a demo App for you.</p>
             
             <p-messages></p-messages>
 
@@ -19,7 +19,7 @@
                            [ngClass]="{'error' : loginError === true, 'ok': loginError === false}">
                     <small [hidden]="loginForm.controls.password.valid || loginForm.controls.password.pristine" class="p-error">Enter your password</small>
 
-                    <button pButton pRipple label="Sign In" class="btn-challengue w-full" (click)="onSubmit($event)"
+                    <button pButton pRipple label="Sign In" class="w-full" (click)="onSubmit($event)"
                             [disabled]="!loginForm.valid">
                     </button>
                 </div>

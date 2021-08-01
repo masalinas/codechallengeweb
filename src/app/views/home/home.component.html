@@ -1,7 +1,7 @@
 <h1>Transaction List</h1>
 
 <div class="flex justify-content-end flex-wrap toolbar">    
-    <button pButton pRipple label="Logout" class="btn-challengue" (click)="onLogout($event)"></button>
+    <button pButton pRipple label="Logout" (click)="onLogout($event)"></button>
 </div>
 
 <p-table  #dtTransactions [value]="transactions"

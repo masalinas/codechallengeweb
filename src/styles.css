@@ -1,10 +1,2 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeflex/primeflex.css";
-
-.txt-challengue {
-    color: var(--orange-500);
-}
-
-.btn-challengue {
-    background: var(--orange-500);
-}

@@ -34,6 +34,8 @@ Load the app from your brower open this link
 http://localhost:4200
 ```
 
+Default username/password it's: user/pass
+
 # Test app
 ```
 npm run test
