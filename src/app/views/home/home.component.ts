@@ -11,8 +11,8 @@ import { AuthenticationService } from '@app/shared/auth';
   styleUrls: ['home.component.scss'],
 })
 export class HomeComponent {
-  loading = false;
-  transactions: InlineResponse2001[];
+  public loading = false;
+  public transactions: InlineResponse2001[];
 
   constructor(private router: Router,
               private authenticationService: AuthenticationService, 
@@ -20,17 +20,24 @@ export class HomeComponent {
   }
 
   ngOnInit() {
+    this.getTransactions();
+  }
+
+  private getTransactions(event?) {
     this.loading = true;
 
     this.defaultService.transactions().subscribe(items => {
-        this.loading = false;
-        this.transactions = items;
+      this.loading = false;
+      this.transactions = items;      
+    },
+    error => {
+      this.loading = false;
 
-        console.log(items);
-    });
+      console.log(error);
+  });
   }
 
-  onLogout(event) {
+  private logout(event) {
     this.authenticationService.logout()            
       .subscribe(data => {
           this.router.navigate(['login']);
@@ -39,5 +46,14 @@ export class HomeComponent {
           console.log(error);
           this.loading = false;
       });
+  }
+
+  public onRefresh(event) {       
+    this.getTransactions(event);
+  }
+  
+
+  public onLogout(event) {
+    this.logout(event);
   }
 }

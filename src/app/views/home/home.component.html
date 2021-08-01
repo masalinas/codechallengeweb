@@ -1,71 +1,77 @@
-<h1>Transaction List</h1>
+<!-- View title--->
+<div class="text-5xl font-bold mb-3">Transaction List</div>
 
-<div class="flex justify-content-end flex-wrap toolbar">    
-    <button pButton pRipple label="Logout" (click)="onLogout($event)"></button>
+<!-- View toolbar--->
+<div class="flex justify-content-between flex-wrap toolbar"> 
+    <button pButton pRipple label="Refresh" icon="pi pi-refresh" (click)="onRefresh($event)"></button>      
+    <button pButton pRipple label="Logout" icon="pi pi-sign-out" (click)="onLogout($event)"></button>    
 </div>
 
-<p-table  #dtTransactions [value]="transactions"
-          [rows]="10" 
-          [showCurrentPageReport]="true"           
-          [rowsPerPageOptions]="[10,25,50]" 
-          [loading]="loading"
-          [paginator]="true" 
-          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"                    
-          styleClass="p-datatable-customers p-datatable-gridlines">        
-    <ng-template pTemplate="header">
-        <tr>
-            <th pSortableColumn="id">
-                <div class="flex justify-content-between align-items-center">
-                    Id 
-                    <p-sortIcon field="id"></p-sortIcon>
-                    <p-columnFilter type="numeric" class="ml-auto" field="id" display="menu"></p-columnFilter>
-                </div>
-            </th>    
-            <th pSortableColumn="userId">
-                <div class="flex justify-content-between align-items-center">
-                    User Id
-                    <p-sortIcon field="userId"></p-sortIcon>
-                    <p-columnFilter type="numeric" class="ml-auto" field="userId" display="menu"></p-columnFilter>
-                </div>
-            </th>         
-            <th pSortableColumn="description">
-                <div class="flex justify-content-between align-items-center">
-                    Description
-                    <p-sortIcon field="description"></p-sortIcon>
-                    <p-columnFilter type="text" class="ml-auto" field="description" display="menu"></p-columnFilter>
-                </div>
-            </th>
-            <th pSortableColumn="description">
-                <div class="flex justify-content-between align-items-center">
-                    Fee
-                    <p-sortIcon field="fee"></p-sortIcon>
-                    <p-columnFilter type="numeric" class="ml-auto" field="fee" display="menu"></p-columnFilter>
-                </div>
-            </th>
-            <th pSortableColumn="amount">
-                <div class="flex justify-content-between align-items-center">
-                    Amount
-                    <p-sortIcon field="amount"></p-sortIcon>
-                    <p-columnFilter type="numeric" class="ml-auto" numeric="amount" display="menu"></p-columnFilter>
-                </div>
-            </th> 
-            <th pSortableColumn="date">
-                <div class="flex justify-content-between align-items-center">
-                    Date
-                    <p-sortIcon field="date"></p-sortIcon>
-                    <p-columnFilter type="date" class="ml-auto" field="date" display="menu"></p-columnFilter>
-                </div>
-            </th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-poolRequestWithRelations>
-        <tr>
-            <td>{{poolRequestWithRelations.id}}</td>          
-            <td>{{poolRequestWithRelations.userId}}</td>          
-            <td>{{poolRequestWithRelations.description}}</td>
-            <td>{{poolRequestWithRelations.fee}}</td>
-            <td>{{poolRequestWithRelations.amount}}</td>
-            <td>{{poolRequestWithRelations.date | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
-        </tr>
-    </ng-template>
-</p-table>
+<!-- View table -->
+<div>
+    <p-table  #dtTransactions [value]="transactions"
+            [rows]="10" 
+            [showCurrentPageReport]="true"           
+            [rowsPerPageOptions]="[10,25,50]" 
+            [loading]="loading"
+            [paginator]="true" 
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"                    
+            styleClass="p-datatable-customers p-datatable-gridlines">        
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="id">
+                    <div class="flex justify-content-between align-items-center">
+                        Id 
+                        <p-sortIcon field="id"></p-sortIcon>
+                        <p-columnFilter type="numeric" class="ml-auto" field="id" display="menu"></p-columnFilter>
+                    </div>
+                </th>    
+                <th pSortableColumn="userId">
+                    <div class="flex justify-content-between align-items-center">
+                        User Id
+                        <p-sortIcon field="userId"></p-sortIcon>
+                        <p-columnFilter type="numeric" class="ml-auto" field="userId" display="menu"></p-columnFilter>
+                    </div>
+                </th>         
+                <th pSortableColumn="description">
+                    <div class="flex justify-content-between align-items-center">
+                        Description
+                        <p-sortIcon field="description"></p-sortIcon>
+                        <p-columnFilter type="text" class="ml-auto" field="description" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th pSortableColumn="description">
+                    <div class="flex justify-content-between align-items-center">
+                        Fee
+                        <p-sortIcon field="fee"></p-sortIcon>
+                        <p-columnFilter type="numeric" class="ml-auto" field="fee" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th pSortableColumn="amount">
+                    <div class="flex justify-content-between align-items-center">
+                        Amount
+                        <p-sortIcon field="amount"></p-sortIcon>
+                        <p-columnFilter type="numeric" class="ml-auto" numeric="amount" display="menu"></p-columnFilter>
+                    </div>
+                </th> 
+                <th pSortableColumn="date">
+                    <div class="flex justify-content-between align-items-center">
+                        Date
+                        <p-sortIcon field="date"></p-sortIcon>
+                        <p-columnFilter type="date" class="ml-auto" field="date" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-poolRequestWithRelations>
+            <tr>
+                <td>{{poolRequestWithRelations.id}}</td>          
+                <td>{{poolRequestWithRelations.userId}}</td>          
+                <td>{{poolRequestWithRelations.description}}</td>
+                <td>{{poolRequestWithRelations.fee}}</td>
+                <td>{{poolRequestWithRelations.amount}}</td>
+                <td>{{poolRequestWithRelations.date | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

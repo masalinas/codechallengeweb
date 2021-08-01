@@ -7,7 +7,7 @@ Design and generate client sources from Swagger Editor docker image loading the 
 Start Swagger Editor from your host using docker cli
 ```
 docker pull swaggerapi/swagger-editor
-docker run -d -p 8080:8080 swaggerapi/swagger-editor
+docker run -d --name swagger-editor -p 80:8080 swaggerapi/swagger-edito
 ```
 
 Load Swagger Editor from your browser open this link
@@ -53,7 +53,7 @@ npm run build -- --prod
 
 # Some app captures
 Login view
-![Captura de pantalla de 2021-08-01 11-27-23](https://user-images.githubusercontent.com/1216181/127766105-8f488694-7964-46f2-8e06-2782dfe7e84a.png)
+![Captura de pantalla de 2021-08-01 11-43-19](https://user-images.githubusercontent.com/1216181/127766539-c83627eb-3f51-429f-94f8-879162c5d88f.png)
 
 Transaction list View
 ![Captura de pantalla de 2021-08-01 11-29-29](https://user-images.githubusercontent.com/1216181/127766142-d080ff87-f5d2-4d56-b7d9-23fd44171e1c.png)
