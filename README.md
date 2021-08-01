@@ -1,8 +1,8 @@
 # description
 OpenAPI Code Challenge
 
-# generate models
-Design and generate client sources from Swagger Editor from docker image
+# generate angular services sources
+Design and generate client sources from Swagger Editor docker image loading the OpenAPI contract document **openapi.yaml**
 
 ```
 docker pull swaggerapi/swagger-editor
