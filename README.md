@@ -2,9 +2,16 @@
 OpenAPI Code Challenge
 
 # generate models
+Design and generate client sources from Swagger Editor from docker image
+
 ```
-openapi-generator-cli generate -i openapi.yaml -g typescript-angular
+docker pull swaggerapi/swagger-editor
+docker run -d -p 8080:8080 swaggerapi/swagger-editor
+
+http://localhost:8080
 ```
+
+![Captura de pantalla de 2021-08-01 10-31-00](https://user-images.githubusercontent.com/1216181/127765735-91bd31a9-5de0-4fae-af20-aea71e65bb37.png)
 
 # debug app
 ```
