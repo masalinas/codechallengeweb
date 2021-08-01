@@ -1,7 +1,7 @@
 # description
 OpenAPI Code Challenge
 
-# generate angular services sources
+# Generate client angular services sources
 Design and generate client sources from Swagger Editor docker image loading the OpenAPI contract document **openapi.yaml** Code challenge API file
 
 Start Swagger Editor from your host using docker cli
@@ -15,14 +15,16 @@ Load Swagger Editor from your browser open this link
 http://localhost:8080
 ```
 
+From Swagger Editor select Generate Client -> typescript-angular menu option to generate the client sources to be download
+
 ![Captura de pantalla de 2021-08-01 10-31-00](https://user-images.githubusercontent.com/1216181/127765735-91bd31a9-5de0-4fae-af20-aea71e65bb37.png)
 
-# load dependencies app
+# Load dependencies app
 ```
 npm install
 ```
 
-# start app in localhost and debug
+# Start app in localhost and debug
 ```
 npm run start
 ```
@@ -32,17 +34,17 @@ Load the app from your brower open this link
 http://localhost:4200
 ```
 
-# test app
+# Test app
 ```
 npm run test
 ```
 
-# build app
+# Build app
 ```
 npm run build
 ```
 
-# build app for production
+# Build app for production
 ```
 npm run build -- --prod
 ```
