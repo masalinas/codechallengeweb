@@ -11,6 +11,11 @@ openapi-generator-cli generate -i openapi.yaml -g typescript-angular
 npm run start
 ```
 
+# test app
+```
+npm run test
+```
+
 # build app
 ```
 npm run build
