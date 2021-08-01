@@ -1,4 +1,4 @@
-# description
+# Description
 OpenAPI Code Challenge
 
 # Generate client angular services sources
@@ -48,3 +48,10 @@ npm run build
 ```
 npm run build -- --prod
 ```
+
+# Some app captures
+Login view
+![Captura de pantalla de 2021-08-01 11-27-23](https://user-images.githubusercontent.com/1216181/127766105-8f488694-7964-46f2-8e06-2782dfe7e84a.png)
+
+Transaction list View
+![Captura de pantalla de 2021-08-01 11-29-29](https://user-images.githubusercontent.com/1216181/127766142-d080ff87-f5d2-4d56-b7d9-23fd44171e1c.png)
