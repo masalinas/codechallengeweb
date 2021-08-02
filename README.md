@@ -1,5 +1,5 @@
 # Description
-OpenAPI Code Challenge
+Web Code Challenge
 
 # Generate client angular services sources
 Design and generate client sources from Swagger Editor docker image loading the OpenAPI contract document **openapi.yaml** Code challenge API file
