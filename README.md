@@ -51,7 +51,7 @@ npm run build
 npm run build -- --prod
 ```
 
-# Some app captures
+# Some app captures 
 ![Captura de pantalla de 2021-08-02 08-33-49](https://user-images.githubusercontent.com/1216181/127814679-a5073981-2554-417d-8fbf-f829600e813f.png)
 
 
