@@ -51,6 +51,43 @@ npm run build
 npm run build -- --prod
 ```
 
+# Build docker image
+Build docker image 
+```
+docker build -t codechallengeweb .
+```
+
+Run docker container
+```
+docker run --name codechallengeweb -p 80:80 -d codechallengeweb
+```
+
+Access codechallengeweb app
+```
+http://localhost
+```
+
+Stop docker container
+```
+docker stop codechallengeweb
+```
+
+Start docker container
+```
+docker start codechallengeweb
+```
+
+Show docker container logs
+```
+docker logs codechallengeweb
+```
+
+clean docker resources
+```
+docker rm codechallengeweb
+docker rmi codechallengeweb
+```
+
 # Some app captures 
 ![Captura de pantalla de 2021-08-02 08-33-49](https://user-images.githubusercontent.com/1216181/127814679-a5073981-2554-417d-8fbf-f829600e813f.png)
 
