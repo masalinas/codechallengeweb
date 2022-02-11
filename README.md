@@ -15,6 +15,8 @@ Load Swagger Editor from your browser open this link
 http://localhost:8080
 ```
 
+Account: user/pass
+
 From Swagger Editor select Generate Client -> typescript-angular menu option to generate the client sources to be download
 
 ![Captura de pantalla de 2021-08-01 10-31-00](https://user-images.githubusercontent.com/1216181/127765735-91bd31a9-5de0-4fae-af20-aea71e65bb37.png)
