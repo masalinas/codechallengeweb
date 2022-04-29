@@ -13,7 +13,7 @@ import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 
-// import angular envirotment variables
+// import angular environtment variables
 import { Configuration, ApiModule } from '@app/shared/backend';
 import { environment } from '@environments/environment';
 
