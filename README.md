@@ -7,7 +7,7 @@ Design and generate client sources from Swagger Editor docker image loading the 
 Start Swagger Editor from your host using docker cli
 ```
 docker pull swaggerapi/swagger-editor
-docker run -d --name swagger-editor -p 80:8080 swaggerapi/swagger-edito
+docker run -d --name swagger-editor -p 80:8080 swaggerapi/swagger-editor
 ```
 
 Load Swagger Editor from your browser open this link
